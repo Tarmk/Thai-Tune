@@ -1,0 +1,19 @@
+# Email Configuration Template
+# Copy these lines to your .env.local file
+
+# Email Configuration (IMAP)
+SUPPORT_EMAIL=support@yourdomain.com
+SUPPORT_EMAIL_PASSWORD=your_email_app_password
+EMAIL_HOST=imap.gmail.com
+EMAIL_PORT=993
+
+# Email Configuration Examples:
+# Gmail: imap.gmail.com (port 993)
+# Outlook: outlook.office365.com (port 993)
+# Yahoo: imap.mail.yahoo.com (port 993)
+# For custom domains: ask your hosting provider
+
+# For Gmail:
+# 1. Enable 2-factor authentication
+# 2. Generate an "App Password"
+# 3. Use the app password, not your regular password 

@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 343 45% 20%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 343 45% 15%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 343 15% 95%;
+    --accent-foreground: 343 45% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 343 45% 20%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 343 35% 35%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 343 35% 40%;
+
+    --secondary: 217.2 32.6% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 20%;
+    --muted-foreground: 215 20.2% 75%;
+
+    --accent: 343 35% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 343 35% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Fix for dark mode */
+html.dark {
+  color-scheme: dark;
+  background-color: #1a1f2c !important; /* Same as dark:bg-[#1a1f2c] */
+}
+
+html.dark body {
+  background-color: #1a1f2c !important;
+}
+
+/* Prevent flash when navigating in dark mode */
+html.dark * {
+  transition: none !important;
+}
+
+/* Apply transitions only after initial load to prevent flashing */
+@media (prefers-reduced-motion: no-preference) {
+  .has-loaded .bg-white,
+  .has-loaded .bg-gray-50,
+  .has-loaded .bg-gray-100,
+  .has-loaded .bg-gray-200,
+  .has-loaded .dark\:bg-\[\#1a1f2c\],
+  .has-loaded .dark\:bg-gray-800,
+  .has-loaded .dark\:bg-gray-900,
+  .has-loaded .dark\:bg-\[\#242A38\],
+  .has-loaded div[style*="background"] {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
+
+/* Preload backgrounds to prevent flashing */
+body:after {
+  content: "";
+  position: fixed;
+  left: -9999px;
+  background-color: #1a1f2c;
+  background-color: #242a38;
+  background-color: white;
+  background-color: #f3f4f6;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+  50% {
+    background-position: 100% 50%;
+    background-size: 200% 200%;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(74, 29, 44, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(138, 61, 76, 0.5);
+  }
+}
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 4s ease infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+.hover\\:shadow-3xl:hover {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
+}
+.group:hover .animate-bounce {
+  animation-duration: 0.8s;
+}

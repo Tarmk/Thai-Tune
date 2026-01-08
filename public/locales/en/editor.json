@@ -1,0 +1,33 @@
+{
+  "saveVersion": "Save Version",
+  "autoSave": "Auto-save",
+  "savedVersions": "Saved Versions",
+  "version": "Version",
+  "load": "Load",
+  "by": "By",
+  "backToDetails": "Back to Score Details",
+  "saveChanges": "Save Changes",
+  "lastSaved": "Last saved",
+  "sharingSetting": "Sharing Setting",
+  "private": "Private",
+  "public": "Public",
+  "sharing": "Sharing",
+  "save": "Save",
+  "back": "Back",
+  "createNewScore": "Create New Score",
+  "backToMyScores": "Back to My Scores",
+  "scoreName": "Score Name",
+  "enterScoreName": "Enter score name",
+  "sharingOption": "Sharing Option",
+  "next": "Next",
+  "creating": "Creating...",
+  "scoreDescription": "Fill in the details below to create a new music score",
+  "formDescription": "Fill in the details below to create a new music score",
+  "publicDescription": "Anyone can view this score",
+  "privateDescription": "Only you can view this score",
+  "errors": {
+    "loginRequired": "You must be logged in to create a score",
+    "nameRequired": "Score name is required",
+    "unexpected": "An unexpected error occurred"
+  }
+}
