@@ -2,6 +2,8 @@
 
 ThaiTune is a web platform dedicated to preserving, sharing, and exploring traditional Thai music. This application allows users to create, edit, and share musical scores, while connecting with a community of enthusiasts.
 
+**Live:** https://thaitune.com
+
 ![ThaiTune Preview](public/images/thaitune-logo.png)
 
 ## Features
@@ -37,8 +39,8 @@ ThaiTune is a web platform dedicated to preserving, sharing, and exploring tradi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/thaitune.git
-   cd thaitune
+   git clone https://github.com/Tarmk/Thai-Tune.git
+   cd Thai-Tune
    ```
 
 2. Install dependencies:
@@ -54,7 +56,7 @@ ThaiTune is a web platform dedicated to preserving, sharing, and exploring tradi
    cp .env.example .env.local
    ```
 
-   Then update the values in `.env.local` with your actual credentials.
+   Then update the values in `.env.local` with your actual credentials (Firebase web config, Flat.io key, OpenAI key, Resend key).
 
    📋 **For detailed setup instructions, see [SETUP.md](SETUP.md)**
 
