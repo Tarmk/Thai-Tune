@@ -422,15 +422,15 @@ const Community = () => {
       style={{ background: pageBg }}
     >
       <main className="flex-grow max-w-7xl mx-auto px-4 pt-20 pb-6 w-full">
-        <div className="flex justify-between items-center flex-wrap space-y-2 mb-4 md:mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 md:mb-6">
           <h1 className="text-lg md:text-2xl font-bold text-[#333333] dark:text-white">
             {t("communityScores")}
           </h1>
-          <div className="flex items-center space-x-4">
+          <div className="w-full sm:w-64">
             <SearchBar
               placeholder={t("searchPlaceholder")}
               onChange={handleSearchChange}
-              className="w-64"
+              className="w-full"
             />
           </div>
         </div>

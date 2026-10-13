@@ -30,7 +30,7 @@ export function SearchBar({ placeholder = "Search scores", onChange, className =
         type="text"
         placeholder={placeholder}
         onChange={(e) => onChange?.(e.target.value)}
-        className="pl-9 pr-4 py-2 rounded-full transition-colors dark:border-gray-700 dark:text-white dark:placeholder-gray-400 focus:ring-offset-0 focus:ring-1 focus:ring-[#9a3548] border"
+        className="w-full h-10 pl-9 pr-4 py-2 rounded-full transition-colors dark:border-gray-700 dark:text-white dark:placeholder-gray-400 focus:ring-offset-0 focus:ring-1 focus:ring-[#9a3548] border"
         style={{ 
           background: inputBg,
           borderColor: inputBorder

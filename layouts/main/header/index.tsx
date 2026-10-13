@@ -129,7 +129,7 @@ const Header: FC<IProps> = ({ user: propUser, collapsible = false }) => {
       style={{ pointerEvents: "auto" }}
     >
       <div className="container mx-auto p-0 flex justify-between items-center">
-        <div className="flex items-center gap-12">
+        <div className="flex items-center gap-6 2xl:gap-12">
           <Logo
             size="lg"
             withText={true}
@@ -139,7 +139,7 @@ const Header: FC<IProps> = ({ user: propUser, collapsible = false }) => {
             href="/"
           />
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-2 2xl:gap-6">
             {user ? (
               <>
                 <Link href="/dashboard">
@@ -270,7 +270,7 @@ const Header: FC<IProps> = ({ user: propUser, collapsible = false }) => {
 
         {/* <div className="flex items-center gap-3"> */}
         <div className="flex items-center gap-3">
-          <div className="hidden md:flex gap-3 items-center">
+          <div className="hidden xl:flex gap-3 items-center">
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -320,7 +320,7 @@ const Header: FC<IProps> = ({ user: propUser, collapsible = false }) => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <div className="hidden md:flex items-center gap-3">
+              <div className="hidden xl:flex items-center gap-3">
                 <Link href="/login">
                   <Button
                     variant="ghost"
@@ -343,7 +343,7 @@ const Header: FC<IProps> = ({ user: propUser, collapsible = false }) => {
 
           {/* Mobile menu */}
           <Sheet>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild className="xl:hidden">
               <Button variant="ghost" className="p-2" aria-label="Menu">
                 <Menu className="h-5 w-5" />
               </Button>
