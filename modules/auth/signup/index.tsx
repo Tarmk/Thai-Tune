@@ -3,10 +3,9 @@
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "@/lib/firebase";
-import { VerificationCodeInput } from "@/components/auth/VerificationCodeInput";
-import { useState, useEffect } from "react";
-import { httpsCallable } from "firebase/functions";
-import { functions } from "@/lib/firebase";
+
+import { useState } from "react";
+
 import { setDoc, doc } from "firebase/firestore";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,9 +25,6 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-
-import { useTranslation } from "react-i18next";
 
 const Signup = () => {
   const router = useRouter();
@@ -36,24 +32,6 @@ const Signup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  const [formData, setFormData] = useState({
-    displayName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    role: "musician",
-  });
-
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const { t } = useTranslation(["auth", "common"]);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   // Use standardized theme colors
   const buttonColor = "hsl(var(--primary))";
   const bgGradient =

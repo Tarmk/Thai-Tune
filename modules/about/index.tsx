@@ -217,7 +217,7 @@ const About = () => {
                   className="text-gray-600 dark:text-gray-300"
                 >
                   Document and preserve thousands of traditional Thai melodies
-                  before they're lost to time.
+                  before they&apos;re lost to time.
                 </motion.p>
               </motion.div>
               <motion.div
@@ -387,7 +387,7 @@ const About = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
             >
-              My dream is for ThaiTune to become the world's most comprehensive
+              My dream is for ThaiTune to become the world&apos;s most comprehensive
               repository of traditional Thai music, fostering a global community
               of learners and preserving our cultural heritage for generations
               to come. Together, we can ensure that the beautiful melodies of

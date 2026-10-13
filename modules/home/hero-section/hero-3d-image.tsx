@@ -1,16 +1,13 @@
 "use client";
 
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useMotionValue } from "framer-motion";
 import { MusicIcon } from "lucide-react";
 import { useEffect } from "react";
 
 const Hero3DImage = () => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
-  const rotateX = useTransform(y, [0, window.innerHeight], [15, -15]);
-  const rotateY = useTransform(x, [0, window.innerWidth], [-15, 15]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

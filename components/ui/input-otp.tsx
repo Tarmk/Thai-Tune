@@ -78,7 +78,7 @@ const InputOTP = forwardRef<HTMLDivElement, InputOTPProps>(
 )
 InputOTP.displayName = "InputOTP"
 
-interface InputOTPGroupProps extends React.HTMLAttributes<HTMLDivElement> {}
+type InputOTPGroupProps = React.HTMLAttributes<HTMLDivElement>
 
 const InputOTPGroup = forwardRef<HTMLDivElement, InputOTPGroupProps>(
   ({ className, ...props }, ref) => {
@@ -96,7 +96,7 @@ interface InputOTPSlotProps extends React.HTMLAttributes<HTMLInputElement> {
 
 const InputOTPSlot = forwardRef<HTMLInputElement, InputOTPSlotProps>(
   ({ className, index = 0, char, ...props }, ref) => {
-    const { id, maxLength, value, disabled, onChange } = useInputOTPContext()
+    const { maxLength, value, disabled, onChange } = useInputOTPContext()
     const inputRef = React.useRef<HTMLInputElement>(null)
     const [focused, setFocused] = React.useState(false)
 

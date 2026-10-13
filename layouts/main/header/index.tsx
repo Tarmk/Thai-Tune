@@ -45,7 +45,7 @@ interface IProps {
 const Header: FC<IProps> = ({ user: propUser, collapsible = false }) => {
   const { t } = useTranslation("common");
   const router = useRouter();
-  const { user: contextUser, loading } = useAuth();
+  const { user: contextUser } = useAuth();
 
   // Collapsible header state
   const [isVisible, setIsVisible] = useState(true);

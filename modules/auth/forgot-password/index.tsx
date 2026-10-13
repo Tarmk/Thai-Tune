@@ -135,7 +135,7 @@ const ForgotPassword = () => {
                 Check your email
               </h3>
               <p className="text-sm text-green-700 dark:text-green-400">
-                We've sent a password reset link to <strong>{email}</strong>
+                We&apos;ve sent a password reset link to <strong>{email}</strong>
               </p>
             </div>
           ) : (

@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { db } from '@/lib/firebase'
 import { collection, getDocs, query, orderBy } from 'firebase/firestore'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // In a real app, you'd validate admin authentication here
     // For now, we'll just return the tickets

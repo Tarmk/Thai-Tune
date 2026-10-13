@@ -109,7 +109,7 @@ const Admin = () => {
       <div className="mb-6">
         <h1 className="text-2xl md:text-3xl font-bold mb-2">Admin Panel</h1>
         <p className="text-gray-600 dark:text-gray-400">
-          Fix user profiles with generic "User" display names
+          Fix user profiles with generic &quot;User&quot; display names
         </p>
       </div>
 
@@ -121,7 +121,7 @@ const Admin = () => {
               Find Users with Generic Names
             </CardTitle>
             <CardDescription>
-              Search for users with "User" as their display name
+              Search for users with &quot;User&quot; as their display name
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -178,7 +178,7 @@ const Admin = () => {
               <Alert className="mb-4">
                 <AlertDescription>
                   <strong>Note:</strong> This is a simplified version. For full
-                  functionality, you'll need to use Firebase Admin SDK on the
+                  functionality, you&apos;ll need to use Firebase Admin SDK on the
                   server to access user authentication data.
                 </AlertDescription>
               </Alert>
@@ -227,7 +227,7 @@ const Admin = () => {
           <CardHeader>
             <CardTitle>Manual Fix Instructions</CardTitle>
             <CardDescription>
-              For a proper fix, you'll need to use Firebase Admin SDK
+              For a proper fix, you&apos;ll need to use Firebase Admin SDK
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -251,7 +251,7 @@ await updateDoc(userRef, {
               <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
                 <h4 className="font-semibold mb-2">Server-Side Solution:</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  For a complete solution, you'll need to create a Cloud
+                  For a complete solution, you&apos;ll need to create a Cloud
                   Function or server endpoint that uses Firebase Admin SDK to
                   access user authentication data and update Firestore
                   documents.

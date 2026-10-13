@@ -1,12 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { db } from '@/lib/firebase'
-import { collection, addDoc, serverTimestamp, getDocs, updateDoc, doc } from 'firebase/firestore'
+import { NextResponse } from 'next/server'
 
 // This would use a free email service like Gmail
 // You'd need to install: npm install imap simple-parser
 // For now, I'll create the structure
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     // This endpoint would be called every 5 minutes by a cron job
     // or you could call it manually to check for new emails
@@ -33,29 +31,6 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     )
   }
-}
-
-// Helper functions for email processing
-function extractTicketId(subject: string): string | null {
-  const match = subject.match(/\[?(TT-[A-Z0-9-]+)\]?/i)
-  return match ? match[1] : null
-}
-
-function cleanEmailContent(text: string): string {
-  const lines = text.split('\n')
-  const cleanLines = []
-  
-  for (const line of lines) {
-    if (line.includes('On ') && line.includes(' wrote:')) break
-    if (line.includes('From:') && line.includes('Sent:')) break
-    if (line.startsWith('>')) break
-    if (line.includes('-----Original Message-----')) break
-    if (line.includes('________________________________')) break
-    
-    cleanLines.push(line)
-  }
-  
-  return cleanLines.join('\n').trim()
 }
 
 export async function GET() {

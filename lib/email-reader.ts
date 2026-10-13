@@ -135,7 +135,7 @@ export const processEmailReplies = async () => {
             let body = '';
             let uid: any = null;
             
-            msg.on('body', (stream: any, info: any) => {
+            msg.on('body', (stream: any) => {
               stream.on('data', (chunk: any) => {
                 body += chunk.toString('utf8');
               });
@@ -372,7 +372,7 @@ const handleEmailReply = async (email: any) => {
 };
 
 // Function to send emails (simple SMTP)
-export const sendEmail = async (to: string, subject: string, html: string) => {
+export const sendEmail = async (to: string, subject: string, _html: string) => {
   // You can use nodemailer or any SMTP service here
   console.log('Send email to:', to, 'Subject:', subject);
   // Implementation depends on your email provider

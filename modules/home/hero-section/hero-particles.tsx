@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { Music, Play, Volume2, Sparkles, Star } from "lucide-react";
+import { Music, Play, Volume2, Sparkles } from "lucide-react";
 import { Particles } from "@/components/common/particles";
 
 const HeroParticles = () => {

@@ -197,8 +197,8 @@ const HelpCenter = () => {
                   <div className="mt-4 text-center">
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       {filteredFAQs.length} result
-                      {filteredFAQs.length !== 1 ? "s" : ""} found for "
-                      {searchTerm}"
+                      {filteredFAQs.length !== 1 ? "s" : ""} found for &quot;
+                      {searchTerm}&quot;
                     </p>
                   </div>
                 )}
@@ -352,7 +352,7 @@ const HelpCenter = () => {
                   Still Need Help?
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Can't find what you're looking for? Our support team is here
+                  Can&apos;t find what you&apos;re looking for? Our support team is here
                   to help you.
                 </p>
               </div>

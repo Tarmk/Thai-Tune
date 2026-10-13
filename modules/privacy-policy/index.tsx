@@ -281,7 +281,7 @@ const PrivacyPolicy = () => {
             {/* Children's Privacy */}
             <div className="mb-12">
               <h3 className="text-xl font-semibold text-maroon dark:text-maroon-lite mb-4">
-                9. Children's Privacy
+                9. Children&apos;s Privacy
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 ThaiTune is not intended for children under 13 years of age. We

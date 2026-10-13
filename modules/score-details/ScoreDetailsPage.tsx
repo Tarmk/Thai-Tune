@@ -28,7 +28,6 @@ import {
   onSnapshot,
   Timestamp,
 } from "firebase/firestore";
-import OpenAI from "openai";
 import { useAuth } from "@/hooks/use-auth";
 import { useScriptLoad } from "@/hooks/use-script-load";
 import { messageToGpt } from "@/lib/openAI/message-to-gpt";

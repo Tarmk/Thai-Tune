@@ -6,7 +6,6 @@ export async function createScore(data: any) {
     return { data: response.data, error: null };
   } catch (error: any) {
     const errorMessage = error.response?.data?.message || error.message || "Failed to create score";
-    const errorDetails = error.response?.data || {};
     
     // Log more details for debugging
     if (error.response?.status === 401) {

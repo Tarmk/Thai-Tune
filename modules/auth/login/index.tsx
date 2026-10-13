@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, functions, db } from "@/lib/firebase";
 import { VerificationCodeInput } from "@/components/auth/VerificationCodeInput";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { httpsCallable } from "firebase/functions";
 import { doc, getDoc } from "firebase/firestore";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,6 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 
 const Login = () => {
   const router = useRouter();
@@ -39,12 +38,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Use standardized theme colors
   const buttonColor = "hsl(var(--primary))";
@@ -336,7 +329,7 @@ const Login = () => {
 
         <CardFooter className="flex flex-col gap-3 pb-6">
           <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               href="/signup"
               className="font-medium transition-colors"

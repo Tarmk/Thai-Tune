@@ -24,7 +24,7 @@ export const Particles: React.FC<ParticlesProps> = ({
   vx = 0,
   vy = 0,
 }) => {
-  const [particleColor, setParticleColor] = useState<string>(color);
+  const [particleColor] = useState<string>(color);
 
   interface MousePosition {
     x: number;

@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { auth, db } from "@/lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
@@ -28,7 +28,6 @@ function SearchParamsHandler({
 }: {
   onParamsReady: (params: URLSearchParams) => void;
 }) {
-  const { useSearchParams } = require("next/navigation");
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -45,11 +44,10 @@ export default function EditScoreClient({ id }: ClientProps) {
   const [user, setUser] = useState<any>(null);
   const [flatId, setFlatId] = useState<string | null>(null);
   const [title, setTitle] = useState<string>("");
-  const [score, setScore] = useState<any>(null);
+  const [, setScore] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [searchParamsObj, setSearchParamsObj] =
-    useState<URLSearchParams | null>(null);
+  const [, setSearchParamsObj] = useState<URLSearchParams | null>(null);
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const embedRef = useRef<any>(null);

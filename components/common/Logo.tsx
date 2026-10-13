@@ -21,7 +21,7 @@ export function Logo({
   href = "/",
   variant = "primary",
   borderRadius = "rounded-lg", // Default rounded corners
-  transparent = false,
+  transparent: _transparent = false, // accepted for API compatibility; not used
   scale = 1.1, // Default scaling factor to make logo slightly larger
 }: LogoProps) {
   const { theme, resolvedTheme } = useTheme();

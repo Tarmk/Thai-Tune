@@ -122,7 +122,7 @@ const AdminSupportTickets = () => {
   const [autoCheckInterval, setAutoCheckInterval] =
     useState<NodeJS.Timeout | null>(null);
   const [nextCheckTime, setNextCheckTime] = useState<Date | null>(null);
-  const [countdownTick, setCountdownTick] = useState(0);
+  const [, setCountdownTick] = useState(0); // ticks once a second to refresh the countdown
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Known Issues state
@@ -1396,7 +1396,7 @@ const AdminSupportTickets = () => {
                       {selectedTicket.ticketId} • {selectedTicket.title}
                     </p>
                     <p className="text-xs text-green-600 dark:text-green-400 mt-1">
-                      ✅ Gmail API integration ready! Click "Check Gmail" to
+                      ✅ Gmail API integration ready! Click &quot;Check Gmail&quot; to
                       automatically import email replies.
                     </p>
                   </div>

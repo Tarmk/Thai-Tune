@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import { MusicIcon, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { motion } from "framer-motion";
 import HeroParticles from "./hero-particles";
@@ -10,14 +10,8 @@ import Hero3DImage from "./hero-3d-image";
 
 const HeroSection = () => {
   const { t } = useTranslation("common");
-  const [isClient, setIsClient] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const { user } = useAuth();
-
-  useEffect(() => {
-    setIsClient(true);
-  });
 
   return (
     <div className="w-full py-8 md:py-24 relative">

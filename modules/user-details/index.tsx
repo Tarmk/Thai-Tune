@@ -34,7 +34,7 @@ import {
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useAuth } from "@/hooks/use-auth";
@@ -720,7 +720,7 @@ const UserDetails: FC<IProps> = ({ userId: id }) => {
                       User Not Found
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-6">
-                      The user profile you're looking for doesn't exist or has
+                      The user profile you&apos;re looking for doesn&apos;t exist or has
                       been removed.
                     </p>
                     <Button

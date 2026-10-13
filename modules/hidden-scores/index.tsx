@@ -173,7 +173,7 @@ const HiddenScores = () => {
                   Hidden Scores
                 </h1>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Manage scores you've hidden from the community page
+                  Manage scores you&apos;ve hidden from the community page
                 </p>
               </div>
 
@@ -206,7 +206,7 @@ const HiddenScores = () => {
                 No Hidden Scores
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                You haven't hidden any scores from the community page yet.
+                You haven&apos;t hidden any scores from the community page yet.
               </p>
               <Link href="/community">
                 <Button className="bg-maroon hover:bg-[#3A1520] dark:bg-[#8A3D4C] dark:hover:bg-maroon-dark text-white">

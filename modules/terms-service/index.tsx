@@ -38,7 +38,7 @@ const TermsService = () => {
                 </h2>
               </div>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                These Terms of Service ("Terms") govern your use of ThaiTune, a
+                These Terms of Service (&quot;Terms&quot;) govern your use of ThaiTune, a
                 digital platform dedicated to preserving and sharing traditional
                 Thai music. By accessing or using our service, you agree to be
                 bound by these Terms.
@@ -119,7 +119,7 @@ const TermsService = () => {
                   Our Content
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
-                  ThaiTune's platform, design, and original content are
+                  ThaiTune&apos;s platform, design, and original content are
                   protected by intellectual property laws. You may not
                   reproduce, distribute, or create derivative works without
                   permission.
@@ -141,7 +141,7 @@ const TermsService = () => {
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300 ml-4">
                   <li>
-                    Upload content that infringes on others' intellectual
+                    Upload content that infringes on others&apos; intellectual
                     property rights
                   </li>
                   <li>Share inappropriate, offensive, or harmful content</li>
@@ -154,7 +154,7 @@ const TermsService = () => {
                     authorization
                   </li>
                   <li>
-                    Attempt to hack, disrupt, or compromise the platform's
+                    Attempt to hack, disrupt, or compromise the platform&apos;s
                     security
                   </li>
                   <li>Spam other users or engage in harmful behavior</li>
@@ -187,7 +187,7 @@ const TermsService = () => {
               </div>
               <div className="prose dark:prose-invert max-w-none">
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  ThaiTune is provided "as is" without warranties of any kind.
+                  ThaiTune is provided &quot;as is&quot; without warranties of any kind.
                   We do not guarantee:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300 ml-4">

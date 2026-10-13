@@ -16,7 +16,7 @@ import {
   EyeOff,
   Clock,
 } from "lucide-react";
-import { useTranslation } from "react-i18next";
+
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 
@@ -193,7 +193,6 @@ function KnownIssuesSection() {
 }
 
 const ReportIssue = () => {
-  const { t } = useTranslation("common");
   const { theme } = useTheme();
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -449,7 +448,7 @@ const ReportIssue = () => {
                     Bug Report
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    Something isn't working as expected
+                    Something isn&apos;t working as expected
                   </p>
                 </CardContent>
               </Card>
@@ -666,7 +665,7 @@ const ReportIssue = () => {
                             Report submitted successfully!
                           </p>
                           <p className="text-green-600 dark:text-green-300 text-sm">
-                            Thank you for your feedback. We'll review your
+                            Thank you for your feedback. We&apos;ll review your
                             report and get back to you if needed.
                           </p>
                         </div>
