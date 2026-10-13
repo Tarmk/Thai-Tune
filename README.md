@@ -1,10 +1,16 @@
 # ThaiTune - Traditional Thai Music Platform
 
+[![CI](https://github.com/Tarmk/Thai-Tune/actions/workflows/ci.yml/badge.svg)](https://github.com/Tarmk/Thai-Tune/actions/workflows/ci.yml)
+![Next.js 15](https://img.shields.io/badge/Next.js-15-black)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 ThaiTune is a web platform dedicated to preserving, sharing, and exploring traditional Thai music. This application allows users to create, edit, and share musical scores, while connecting with a community of enthusiasts.
 
 **Live:** https://thaitune.com
 
-![ThaiTune Preview](public/images/thaitune-logo.png)
+![ThaiTune home page](docs/home.png)
+
+> This repository is the public copy of the ThaiTune code. The live site deploys from a private repository.
 
 ## Features
 
@@ -58,7 +64,7 @@ ThaiTune is a web platform dedicated to preserving, sharing, and exploring tradi
 
    Then update the values in `.env.local` with your actual credentials (Firebase web config, Flat.io key, OpenAI key, Resend key).
 
-   📋 **For detailed setup instructions, see [SETUP.md](SETUP.md)**
+   📋 **For detailed setup instructions, see [docs/SETUP.md](docs/SETUP.md)**
 
 4. Start the development server:
    ```bash
@@ -99,7 +105,7 @@ ThaiTune is a web platform dedicated to preserving, sharing, and exploring tradi
 
 ## Project Structure
 
-The project follows a modular architecture for better maintainability. See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for detailed information about the codebase organization.
+The project follows a modular architecture for better maintainability. See [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed information about the codebase organization.
 
 ```
 ├── app/                    # Next.js App Router
@@ -130,9 +136,12 @@ The project follows a modular architecture for better maintainability. See [PROJ
 ### Scripts
 
 - `npm run dev`: Start development server
-- `npm run build`: Build for production
+- `npm run build`: Build for production (type errors and lint errors fail the build)
 - `npm run start`: Start production server
 - `npm run lint`: Run ESLint
+- `npm run typecheck`: Run the TypeScript compiler without emitting
+
+CI runs lint, type-check and a production build on every push. More guides (email setup, the support inbox, logo assets) are in [`docs/`](docs/).
 
 ### Firebase Deployment
 
@@ -153,7 +162,7 @@ NEXT_DEBUG=true npm run build
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License, see [LICENSE](LICENSE).
 
 ## Acknowledgments
 
