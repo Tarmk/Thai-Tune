@@ -14,6 +14,7 @@ import CreateNewScore from "./createNewScore";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
 import { useAuth } from "@/hooks/use-auth";
+import { publicAuthorName } from "@/lib/public-name";
 
 const NewScore = () => {
   const { t, i18n } = useTranslation("editor");
@@ -83,7 +84,7 @@ const NewScore = () => {
 
       const scoreData = {
         name: name.trim(),
-        author: user.displayName || "Anonymous",
+        author: publicAuthorName(user.displayName),
         created: serverTimestamp(),
         modified: serverTimestamp(),
         userId: user.uid,

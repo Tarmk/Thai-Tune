@@ -40,6 +40,7 @@ import { motion } from "framer-motion";
 import { useAuth } from "@/hooks/use-auth";
 import { FC, useEffect, useState } from "react";
 import EmptyScoresCard from "./empty-scores-card";
+import { publicAuthorName } from "@/lib/public-name";
 
 interface UserProfile {
   displayName: string;
@@ -133,10 +134,7 @@ const UserDetails: FC<IProps> = ({ userId: id }) => {
             currentUser.uid === id &&
             userData.displayName === "User"
           ) {
-            const realDisplayName =
-              currentUser.displayName ||
-              currentUser.email?.split("@")[0] ||
-              "User";
+            const realDisplayName = publicAuthorName(currentUser.displayName, "User");
             try {
               await updateDoc(userDocRef, {
                 displayName: realDisplayName,
@@ -151,6 +149,8 @@ const UserDetails: FC<IProps> = ({ userId: id }) => {
             }
           }
 
+          // Profiles are public: never show an email address as the name.
+          userData.displayName = publicAuthorName(userData.displayName, "User");
           setUserProfile(userData);
           setFollowersCount(userData.followers?.length || 0);
         } else {
@@ -158,10 +158,7 @@ const UserDetails: FC<IProps> = ({ userId: id }) => {
           if (currentUser && currentUser.uid === id) {
             // For the current user, create a profile with their auth info
             const defaultUserData = {
-              displayName:
-                currentUser.displayName ||
-                currentUser.email?.split("@")[0] ||
-                "User",
+              displayName: publicAuthorName(currentUser.displayName, "User"),
               bio: "",
               roles: [],
               profilePictureUrl: currentUser.photoURL || "",
@@ -205,7 +202,7 @@ const UserDetails: FC<IProps> = ({ userId: id }) => {
             genre: data.genre,
             createdAt: data.created || null,
             rating: data.rating || 0,
-            author: userProfile?.displayName || "Unknown",
+            author: publicAuthorName(userProfile?.displayName, "Unknown"),
             flatid: data.flatid,
           };
         }) as Score[];

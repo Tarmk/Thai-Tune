@@ -28,6 +28,7 @@ import {
 import { useScriptLoad } from "@/hooks/use-script-load";
 import { LoadingSpinner } from "@/components/common/LoadingSpinner";
 import { createScore } from "@/lib/flat";
+import { publicAuthorName } from "@/lib/public-name";
 
 interface EditorProps {
   title: string;
@@ -329,7 +330,7 @@ const Editor = forwardRef(
           {title}
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
-          By {user?.displayName || "Anonymous"}
+          By {publicAuthorName(user?.displayName)}
         </p>
 
         {error && (

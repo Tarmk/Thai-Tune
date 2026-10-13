@@ -21,6 +21,7 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
 import { SearchBar } from "@/components/common/SearchBar";
 import { toast } from "@/hooks/use-toast";
+import { publicAuthorName } from "@/lib/public-name";
 
 interface BookmarkedScore {
   id: string;
@@ -105,7 +106,7 @@ const MyBookmarks = () => {
               return {
                 id: scoreSnap.id,
                 name: data.name || "",
-                author: data.author || "",
+                author: publicAuthorName(data.author),
                 modified:
                   modifiedTimestamp && modifiedTimestamp.toDate
                     ? modifiedTimestamp.toDate().toLocaleString()

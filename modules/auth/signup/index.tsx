@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "@/lib/firebase";
+import { looksLikeEmail } from "@/lib/public-name";
 
 import { useState } from "react";
 
@@ -50,6 +51,11 @@ const Signup = () => {
     const name = formData.get("name") as string;
 
     // Basic validation
+    if (looksLikeEmail(name)) {
+      setError("Please enter your name, not your email address. Your name is shown on the scores you share.");
+      setIsLoading(false);
+      return;
+    }
     if (password.length < 6) {
       setError("Password should be at least 6 characters");
       setIsLoading(false);
@@ -68,7 +74,7 @@ const Signup = () => {
       // Create user document in Firestore
       await setDoc(doc(db, "users", userCredential.user.uid), {
         displayName: name || "",
-        email,
+        // No email here: user profiles are publicly readable. Firebase Auth keeps the email.
         bio: "",
         createdAt: new Date(),
         followers: [],

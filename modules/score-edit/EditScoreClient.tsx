@@ -17,6 +17,7 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 import { generateScoreDescription } from "@/lib/openAI/score-description";
+import { publicAuthorName } from "@/lib/public-name";
 
 interface ClientProps {
   id: string;
@@ -479,7 +480,7 @@ export default function EditScoreClient({ id }: ClientProps) {
           {title}
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-4">
-          By {user?.displayName || "Anonymous"}
+          By {publicAuthorName(user?.displayName)}
         </p>
 
         {/* Score Editor */}

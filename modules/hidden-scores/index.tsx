@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { toast } from "@/hooks/use-toast";
+import { publicAuthorName } from "@/lib/public-name";
 
 interface HiddenScore {
   id: string;
@@ -52,7 +53,7 @@ const HiddenScores = () => {
               scoresData.push({
                 id: scoreId,
                 title: data.name || "Untitled Score",
-                author: data.author || "Unknown Author",
+                author: publicAuthorName(data.author, "Unknown Author"),
                 thumbnailUrl: data.flatid
                   ? `https://flat.io/api/v2/scores/${data.flatid}/revisions/last/thumbnail.png?width=300&height=400`
                   : undefined,

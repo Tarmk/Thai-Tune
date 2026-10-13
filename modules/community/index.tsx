@@ -40,6 +40,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { publicAuthorName } from "@/lib/public-name";
 
 interface CommunityScore {
   id: string;
@@ -135,7 +136,7 @@ const Community = () => {
             return {
               id: doc.id,
               name: data.name || "",
-              author: data.author || "",
+              author: publicAuthorName(data.author),
               modified:
                 modifiedTimestamp?.toDate().toLocaleString() ||
                 t("unknownDate"),
@@ -206,7 +207,7 @@ const Community = () => {
             return {
               id: doc.id,
               name: data.name || "",
-              author: data.author || "",
+              author: publicAuthorName(data.author),
               modified:
                 modifiedTimestamp?.toDate().toLocaleString() ||
                 t("unknownDate"),

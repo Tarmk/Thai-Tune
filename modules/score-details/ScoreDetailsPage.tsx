@@ -31,6 +31,7 @@ import {
 import { useAuth } from "@/hooks/use-auth";
 import { useScriptLoad } from "@/hooks/use-script-load";
 import { messageToGpt } from "@/lib/openAI/message-to-gpt";
+import { publicAuthorName } from "@/lib/public-name";
 
 interface Comment {
   id: string;
@@ -195,7 +196,7 @@ const CommentSection = ({ scoreId, user }: { scoreId: string; user: any }) => {
               id: doc.id,
               text: data.text,
               userId: data.userId,
-              userName: data.userName,
+              userName: publicAuthorName(data.userName),
               createdAt: data.createdAt.toDate(),
               scoreId: data.scoreId,
             });
@@ -224,7 +225,7 @@ const CommentSection = ({ scoreId, user }: { scoreId: string; user: any }) => {
       await addDoc(commentsRef, {
         text: newComment.trim(),
         userId: user.uid,
-        userName: user.displayName || "Anonymous",
+        userName: publicAuthorName(user.displayName),
         createdAt: Timestamp.now(),
         scoreId: scoreId,
       });
@@ -377,7 +378,7 @@ export default function ScoreDetailsPage({ id }: ScoreDetailsPageProps) {
           setScore({
             id: scoreDoc.id,
             name: scoreData.name,
-            author: scoreData.author,
+            author: publicAuthorName(scoreData.author),
             modified: scoreData.modified.toDate(),
             flatid: scoreData.flatid,
             userId: scoreData.userId,
