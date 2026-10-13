@@ -93,7 +93,7 @@ const MyBookmarks = () => {
         }
 
         const scoreResults = await Promise.all(
-          bookmarkedScoreIds.map(async (scoreId: string) => {
+          bookmarkedScoreIds.map(async (scoreId: string): Promise<BookmarkedScore | null> => {
             try {
               const scoreSnap = await getDoc(doc(db, "scores", scoreId));
               if (!scoreSnap.exists()) return null;
@@ -117,7 +117,7 @@ const MyBookmarks = () => {
                 sharing: data.sharing || "private",
                 rating: data.rating || 0,
                 ratingCount: data.ratingCount || 0,
-              } satisfies BookmarkedScore;
+              };
             } catch (e) {
               // A bookmarked score may be private/unreadable; skip it.
               console.warn(`Cannot read bookmarked score ${scoreId}:`, e);

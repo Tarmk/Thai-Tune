@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -32,7 +32,6 @@ export function AuthForm({ type, onSubmit, translations }: AuthFormProps) {
   const [name, setName] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -107,7 +106,7 @@ export function AuthForm({ type, onSubmit, translations }: AuthFormProps) {
                 />
               </div>
             </div>
-            <Button className="w-full mt-4" type="submit" isLoading={isLoading}>
+            <Button className="w-full mt-4" type="submit" disabled={isLoading}>
               {isLoading ? translations.loadingText : translations.submitButton}
             </Button>
           </form>

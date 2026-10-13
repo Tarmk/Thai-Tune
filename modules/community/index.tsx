@@ -26,7 +26,7 @@ import {
   updateDoc,
   onSnapshot,
 } from "firebase/firestore";
-import { Timestamp } from "firebase/firestore";
+import { Timestamp, type DocumentData, type QueryDocumentSnapshot, type QuerySnapshot } from "firebase/firestore";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import debounce from "lodash.debounce";
 import { useTranslation } from "react-i18next";
@@ -52,11 +52,6 @@ interface CommunityScore {
   ratingCount: number;
   userId: string;
   isBookmarked: boolean;
-}
-
-interface BookmarkData {
-  id: string;
-  scoreId: string;
 }
 
 const Community = () => {
@@ -116,7 +111,7 @@ const Community = () => {
       where("sharing", "==", "public")
     );
 
-    const processScores = async (snapshot: any) => {
+    const processScores = async (snapshot: QuerySnapshot<DocumentData>) => {
       try {
         setLoading(true);
         const user = auth.currentUser;
@@ -133,7 +128,7 @@ const Community = () => {
         ) as string[];
 
         const scoresList = snapshot.docs
-          .map((doc: any) => {
+          .map((doc: QueryDocumentSnapshot<DocumentData>): CommunityScore => {
             const data = doc.data();
             const modifiedTimestamp = data.modified as Timestamp;
             const createdTimestamp = data.created as Timestamp;

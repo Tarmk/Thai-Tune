@@ -4,12 +4,12 @@ import { db } from '@/lib/firebase'
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const body = await request.json()
     const { title, description, status, priority, category, estimatedFix, workaround } = body
-    const { id } = params
+    const { id } = await params
 
     if (!title || !description || !status || !priority || !category) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -39,10 +39,10 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params
+    const { id } = await params
     const docRef = doc(db, 'knownIssues', id)
     await deleteDoc(docRef)
 
