@@ -114,7 +114,7 @@ const About = () => {
                   variants={fadeInUp}
                   className="text-3xl font-bold mb-6 text-maroon dark:text-maroon-lite"
                 >
-                  Meet Krittaphas Kunkhongkaphan
+                  Meet Tarm
                 </motion.h2>
                 <motion.p
                   variants={fadeInUp}
@@ -155,7 +155,7 @@ const About = () => {
                       transition={{ delay: 0.4 }}
                       className="text-xl font-bold mb-2"
                     >
-                      Krittaphas Kunkhongkaphan
+                      Tarm
                     </motion.h3>
                     <motion.p
                       variants={fadeInUp}
